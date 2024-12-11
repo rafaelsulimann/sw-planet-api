@@ -7,10 +7,10 @@ services:
     image: postgres:14-alpine
     container_name: dev-postgresql
     environment:
-      POSTGRES_DB: hibernate
+      POSTGRES_DB: swplanet
       POSTGRES_PASSWORD: 1234567
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - ./.data/postgresql/data:/var/lib/postgresql/data
     networks:
