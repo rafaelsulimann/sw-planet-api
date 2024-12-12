@@ -20,7 +20,7 @@ import lombok.ToString;
 @Getter
 @RequiredArgsConstructor
 @NoArgsConstructor(onConstructor_ = @Deprecated)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode
 @ToString
 public class Planet {
 
@@ -30,7 +30,6 @@ public class Planet {
 
   @NonNull
   @Column(name = "name")
-  @EqualsAndHashCode.Include
   private String name;
 
   @NonNull
