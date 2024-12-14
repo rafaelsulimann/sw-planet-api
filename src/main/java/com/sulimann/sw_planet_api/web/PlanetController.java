@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sulimann.sw_planet_api.domain.Planet;
 import com.sulimann.sw_planet_api.domain.PlanetService;
 import com.sulimann.sw_planet_api.utils.constants.ResourceURI;
+import com.sulimann.sw_planet_api.web.dtos.CreatePlanetRequest;
+import com.sulimann.sw_planet_api.web.dtos.CreatePlanetResponse;
 
 @RestController
 @RequestMapping(value = ResourceURI.PLANET)
@@ -20,8 +21,8 @@ public class PlanetController {
   private PlanetService planetService;
 
   @PostMapping
-  public ResponseEntity<Planet> create(@RequestBody Planet planet){
-    return ResponseEntity.status(HttpStatus.CREATED).body(this.planetService.create(planet));
+  public ResponseEntity<CreatePlanetResponse> create(@RequestBody CreatePlanetRequest request){
+    return ResponseEntity.status(HttpStatus.CREATED).body(this.planetService.create(request));
   }
 
 }
